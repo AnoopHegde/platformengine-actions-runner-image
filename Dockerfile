@@ -35,3 +35,14 @@ RUN set -x \
   && curl -O -fsSL https://releases.hashicorp.com/terraform/${TERRAFORM_VER}/terraform_${TERRAFORM_VER}_linux_amd64.zip \
   && sudo unzip terraform_${TERRAFORM_VER}_linux_amd64.zip -d /usr/local/bin \
   && sudo chmod 755 /usr/local/bin/terraform
+
+# Download and Install Node JS
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+RUN sudo apt-get install -y nodejs \
+  && node --version
+
+  
+  
+
+
+  

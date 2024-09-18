@@ -1,4 +1,4 @@
-ARG ACTIONS_BASE="ghcr.io/actions/actions-runner:2.318.0"
+ARG ACTIONS_BASE="ghcr.io/actions/actions-runner:2.319.1"
 FROM $ACTIONS_BASE
 
 ARG KUBECTL_VER="1.28.3"

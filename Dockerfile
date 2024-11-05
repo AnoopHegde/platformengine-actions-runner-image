@@ -2,7 +2,7 @@ ARG ACTIONS_BASE="ghcr.io/actions/actions-runner:2.320.0"
 FROM $ACTIONS_BASE
 
 ARG KUBECTL_VER="1.28.3"
-ARG TERRAFORM_VER="1.8.3"
+ARG TERRAFORM_VER="1.4.0"
 
 
 RUN sudo apt update -y \

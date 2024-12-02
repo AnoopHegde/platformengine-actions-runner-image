@@ -6,8 +6,8 @@ ARG TERRAFORM_VER="1.4.0"
 ARG YQ_VER="v4.35.1"
 
 # Install dependencies and tools in a single RUN command to minimize layers
-RUN sudo apt update -y \
-    umask 0002 \
+RUN sudo apt update -y && \
+    umask 0002 && \
     sudo apt install -y ca-certificates curl wget apt-transport-https lsb-release gnupg unzip ssh git jq software-properties-common openssl && \
     curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null && \
     echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ jammy main" | sudo tee /etc/apt/sources.list.d/azure-cli.list && \
@@ -30,6 +30,6 @@ RUN sudo apt update -y \
     sudo curl -fsSL https://github.com/mikefarah/yq/releases/download/${YQ_VER}/yq_linux_amd64 -o /usr/local/bin/yq && \
     sudo chmod 755 /usr/local/bin/yq && \
     # Download and Install Node JS
-    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - \
-    sudo apt-get install -y nodejs \
+    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && \
+    sudo apt-get install -y nodejs && \
     node --version

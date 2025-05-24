@@ -1,7 +1,7 @@
-ARG ACTIONS_BASE="ghcr.io/actions/actions-runner:2.322.0"
+ARG ACTIONS_BASE="ghcr.io/actions/actions-runner:2.324.0"
 FROM $ACTIONS_BASE
 
-ARG KUBECTL_VER="1.28.3"
+ARG KUBECTL_VER="1.33.1"
 ARG TERRAFORM_VER="1.4.0"
 ARG YQ_VER="v4.35.1"
 
